@@ -1,58 +1,48 @@
-.img{
-    height: 200px;
-}
+.img{height:200px}
 .card-container{
-    padding: 2%;
+    padding:2%
 }
 .clicks{
-    position: absolute;
-    box-shadow: 3px 4px 8px rgb(192, 185, 185);
-    left: 75%;
-    top: 25px;
-    padding: 10px 25px;
-    border-radius: 25px;
-    font-weight: 500;
-    font-size: 1rem;
-    color: rgb(69, 31, 105);
-    display: flex;
-    justify-content: space-between;
+    position:absolute;
+    box-shadow:3px 4px 8px #c0b9b9;
+    left:65%;
+    top:28px;
+    padding:10px 25px;
+    border-radius:25px;
+    font-weight:500;
+    font-size:1rem;
+    color:#451f69;
+    display:flex;
+    justify-content:space-between
 }
 .search-box{
-    margin: 20px 30px;
-    margin-left: 50%;
-    border: none;
-    border-radius: 20px;
-    padding: 15px;
-    width: 40%;
-    font-weight: 400;
-    transform: translate(-50%,-50%);
-    margin-top: 50px;
-    outline: none;
-    box-shadow: 5px 4px 8px rgb(192, 185, 185);
+    border:none;
+    border-radius:20px;
+    padding:15px;
+    width:40%;
+    font-weight:400;
+    transform:translate(-45%,-45%);
+    margin:50px 30px 20px 40%;
+    outline:none;
+    box-shadow:5px 4px 8px #c0b9b9
 }
 .card{
     margin-top:25px;
-    box-shadow: 1px 1px 1px rgb(224, 220, 220);
-    /* border-radius: 25px; */
-    overflow: hidden;
-    /* border:1px solid rgb(168, 167, 167); */
-    transition: 0.3s;
-    padding-bottom: 5px;
+    box-shadow:1px 1px 1px #e0dcdc;
+    transition:.3s;
+    padding-bottom:5px
 }
 .text{
-    height: 25px;
-    margin-left: 10px;
-
-    overflow: hidden;
+    overflow:hidden
+}.text{
+    height:25px;
+    margin-left:10px;
+    margin-right:5px
 }
-.title{
-    margin: 10px;
+.title{margin:10px;
+    height:20px;
+    overflow:hidden
 }
 .card:hover{
-    box-shadow: 3px 3px 10px rgb(202, 189, 189);
+    box-shadow:3px 3px 10px #cabdbd
 }
-/* @media (max-width:"800px") {
-    .card-container{
-        padding: 30px;
-    }
-} */
