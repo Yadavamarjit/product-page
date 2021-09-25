@@ -1,8 +1,9 @@
 import React from 'react'
 import { useEffect,useState } from 'react'
 import './Product.css'
-import {Card,Image,Row,Col,Spinner} from "react-bootstrap"
-
+import {Card,Image,Row,Col} from "react-bootstrap"
+import Loader from './Loader'
+import SearchBar from './SearchBar'
 
 function Product() {
 
@@ -30,7 +31,6 @@ function Product() {
         console.log(fetchedData.total_clicks)
         setClick(fetchedData.total_clicks)
     }
-    // getClicks()
 
     // addClick will update clicks data
     async function addClick(){
@@ -50,10 +50,10 @@ function Product() {
 
     return (
         <>
-        {/* clicks nad searchbar container */}
+        {/* clicks and searchbar container */}
         <Row >
             <Col sm="12">
-                <input className="search-box" placeholder="Search..." type="text" onChange={event=>setSearch(event.target.value)} />
+                <SearchBar onChange={event=>setSearch(event.target.value)} />
             </Col>
             <Col sm="12">
                 <span className="clicks">{click+" clicks"}</span>
@@ -64,25 +64,26 @@ function Product() {
             <Row className="card-container">
             {
                 // product.filter filters the product card as per user input text
-                product.filter(val=>{
+                    product.filter(val=>{
 
-                    if(val==="")
-                    {
-                        return val
-                    }
-                    else if(val.title.toLowerCase().includes(search.toLowerCase())){
-                        return val
-                    }
-                    
-                }).map(item=>
-                    <Col  className="card-container" xs="6" md="4" lg="3">
-                        <div onClick={addClick} mt="2" className="card"  key={item.id}>
-                            <Image style={{height:'400px'}} fluid src={item.image} alt="" />
-                            <h5 className="title">{item.title}</h5>
-                            <Card.Text className="text">{item.description}</Card.Text>
-                        </div>
-                    </Col>
-                )
+                        if(val==="")
+                        {
+                            return val
+                        }
+                        else if(val.title.toLowerCase().includes(search.toLowerCase())){
+                            return val
+                        }
+                        
+                    }).map(item=>
+                        <Col  className="card-container" xs="6" md="4" lg="3">
+                            <div onClick={addClick} mt="2" className="card"  key={item.id}>
+                                <Image style={{height:'400px'}} fluid src={item.image} alt="" />
+                                <h5 className="title">{item.title}</h5>
+                                <Card.Text className="text">{item.description}</Card.Text>
+                            </div>
+                        </Col>
+                    )
+
             }
             </Row>
         
